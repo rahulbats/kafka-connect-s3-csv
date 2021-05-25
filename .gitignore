@@ -1,0 +1,4 @@
+./target
+
+# Project exclude paths
+/target/
