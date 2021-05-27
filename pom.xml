@@ -23,8 +23,8 @@
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>connect-transforms</artifactId>
-            <version>${kafkaconnect.version}</version>
+            <artifactId>connect-runtime</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

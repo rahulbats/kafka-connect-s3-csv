@@ -1,4 +1,4 @@
-package com.github.rahulbats.kafka.connect.s3.format.csv;
+package com.github.rahulbats.kafka.connect.s3.format.csv.avro;
 
 import io.confluent.connect.avro.AvroData;
 import io.confluent.connect.s3.S3SinkConnectorConfig;
