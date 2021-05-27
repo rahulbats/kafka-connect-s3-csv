@@ -9,7 +9,6 @@ import io.confluent.connect.s3.storage.S3Storage;
 import io.confluent.connect.storage.format.RecordWriter;
 import io.confluent.connect.storage.format.RecordWriterProvider;
 import org.apache.avro.generic.GenericData;
-import org.apache.kafka.connect.converters.ByteArrayConverter;
 import org.apache.kafka.connect.sink.SinkRecord;
 import org.apache.kafka.connect.data.Schema;
 import org.slf4j.Logger;
@@ -19,8 +18,7 @@ import org.apache.kafka.connect.errors.RetriableException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class CSVRecordWriterProvider extends RecordViewSetter implements RecordWriterProvider<S3SinkConnectorConfig> {
 
@@ -97,21 +95,12 @@ public class CSVRecordWriterProvider extends RecordViewSetter implements RecordW
 
             @Override
             public void close() {
-                try {
-                    //s3outWrapper.write(String.valueOf(recordCount).getBytes());
-                    s3out.commit();
-                    s3outWrapper.close();
-                } catch (IOException e) {
-                    throw new ConnectException(e);
-                }
+               this.commit();
             }
 
             @Override
             public void commit() {
                 try {
-                    //s3outWrapper.write(String.valueOf(recordCount).getBytes());
-                    // Flush is required here, because closing the writer will close the underlying S3
-                    // output stream before committing any data to S3.
                     s3out.commit();
                     s3outWrapper.close();
                 } catch (IOException e) {

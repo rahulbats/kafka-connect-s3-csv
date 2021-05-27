@@ -10,21 +10,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <kafkaconnect.version>2.1.1</kafkaconnect.version>
+        <kafkaconnect.version>2.8.0</kafkaconnect.version>
         <confluent.version>5.1.1</confluent.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>connect-api</artifactId>
-            <version>${kafkaconnect.version}</version>
-            <scope>provided</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-runtime</artifactId>
-            <version>1.0.1</version>
+            <version>${kafkaconnect.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
