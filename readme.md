@@ -6,6 +6,6 @@ Run maven package to generate the jar. Then copy it into the S3 sink connector f
 
 
 ### Things to note.
-. Works with `io.confluent.connect.avro.AvroConverter`
-. If schema changes in between a flush, the csv will be commited with old schema and new schema based csv file will start getting generated.
-. To make this process work, I am appending the Schema Registry version number.
+* Works with `io.confluent.connect.avro.AvroConverter`
+* If schema changes in between a flush, the csv will be commited with old schema and new schema based csv file will start getting generated.
+* To make this process work, I am appending the Schema Registry version number.
