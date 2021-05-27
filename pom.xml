@@ -32,12 +32,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>3.3.0</version>
-            <type>maven-plugin</type>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/io.confluent/kafka-connect-s3 -->
         <dependency>
             <groupId>io.confluent</groupId>
